@@ -255,7 +255,7 @@ function App() {
   // Função para ir para o pagamento
   const handleGoToPayment = () => {
     // Redirecionar para a página de pagamento fornecida
-    window.location.href = "https://pay.sunize.com.br/RvcDIGJS";
+    window.location.href = "https://pay.sunize.com.br/AgCmjDzo";
   };
 
   // Formatar CEP enquanto digita
