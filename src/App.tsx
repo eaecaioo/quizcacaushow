@@ -255,7 +255,7 @@ function App() {
   // Função para ir para o pagamento
   const handleGoToPayment = () => {
     // Redirecionar para a página de pagamento fornecida
-    window.location.href = "https://app.nivopayoficial.com.br/checkout/b71e51e0-1b18-4e11-930a-bee828a73382";
+    window.location.href = "https://pay.sunize.com.br/RvcDIGJS";
   };
 
   // Formatar CEP enquanto digita
