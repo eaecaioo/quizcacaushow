@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 23 64% 16%; /* Marrom Cacau Show */
+  --card: 0 0% 100%;
+  --card-foreground: 23 64% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 23 64% 16%;
+  --primary: 23 64% 16%; /* Marrom Cacau Show - #3a2415 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 25 36% 41%; /* Marrom mais claro - #9e5328 */
+  --secondary-foreground: 0 0% 98%;
+  --muted: 43 36% 52%; /* Dourado - #bda64d */
+  --muted-foreground: 0 0% 98%;
+  --accent: 43 36% 52%; /* Dourado - #bda64d */
+  --accent-foreground: 23 64% 16%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 30 20% 76%; /* Bege claro - #c5a28d */
+  --input: 30 20% 76%;
+  --ring: 23 64% 16%;
+  --radius: 0.5rem;
+  --cacau-marrom: 23 64% 16%; /* #3a2415 */
+  --cacau-marrom-claro: 25 36% 41%; /* #9e5328 */
+  --cacau-dourado: 43 36% 52%; /* #bda64d */
+  --cacau-bege: 34 35% 66%; /* #c5a28d */
+  --cacau-verde: 104 18% 49%; /* #629d5d */
+  --cacau-offwhite: 30 27% 95%; /* #f4f2f0 */
+}
+
+.dark {
+  --background: 23 64% 16%;
+  --foreground: 0 0% 98%;
+  --card: 23 64% 16%;
+  --card-foreground: 0 0% 98%;
+  --popover: 23 64% 16%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 23 64% 16%;
+  --secondary: 25 36% 41%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 43 36% 52%;
+  --muted-foreground: 0 0% 98%;
+  --accent: 43 36% 52%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 30 20% 76%;
+  --input: 30 20% 76%;
+  --ring: 43 36% 52%;
+}
+
+/* Classes personalizadas para botões e outros elementos */
+.btn-cacau {
+  @apply bg-[#3a2415] text-white font-bold py-3 px-6 rounded-full hover:bg-[#9e5328] transition-all shadow-md active:scale-[0.98] select-none;
+}
+
+.quiz-option {
+  @apply flex items-center p-4 my-2 border border-[#c5a28d] rounded-lg cursor-pointer hover:border-[#bda64d] transition-all active:bg-[#f4f2f0] select-none;
+}
+
+.quiz-option.selected {
+  @apply border-2 border-[#bda64d] bg-[#f4f2f0];
+}
+
+.progress-bar {
+  @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full bg-[#3a2415] transition-all duration-300;
+}
+
+/* Melhorias para mobile */
+@media (max-width: 640px) {
+  .btn-cacau {
+    @apply py-4 px-4 text-base w-full;
+  }
+
+  .quiz-option {
+    @apply p-3;
+  }
+
+  .quiz-option-emoji {
+    @apply flex-shrink-0 mr-2 text-lg;
+  }
+
+  .quiz-option-text {
+    @apply text-sm;
+  }
+
+  .page-container {
+    @apply px-3;
+  }
+
+  .quiz-card {
+    @apply p-4;
+  }
+
+  .quiz-heading {
+    @apply text-xl mb-4;
+  }
+
+  .promotion-heading {
+    @apply text-2xl;
+  }
+
+  .promotion-subheading {
+    @apply text-lg;
+  }
+}
+
+/* Animações */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
+
+/* Estilos para CEP input */
+.cep-input {
+  @apply w-full p-3 border border-[#c5a28d] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bda64d] text-center font-bold text-lg;
+}
+
+.loading-circle {
+  @apply h-20 w-20 border-4 border-[#c5a28d] border-t-[#3a2415] rounded-full animate-spin mx-auto my-6;
+}
+
+.success-checkmark {
+  @apply flex items-center justify-center w-20 h-20 bg-[#629d5d] rounded-full mx-auto my-6 text-white text-3xl;
+}
+
+/* Estilos adicionais para responsividade */
+@media (max-width: 640px) {
+  body {
+    @apply text-sm;
+  }
+
+  .promotion-heading {
+    @apply text-xl;
+  }
+
+  .promotion-subheading {
+    @apply text-base;
+  }
+
+  .quiz-option.selected {
+    @apply border-2 border-[#bda64d] bg-[#f4f2f0] text-sm;
+  }
+
+  .loading-circle {
+    @apply h-16 w-16;
+  }
+}
